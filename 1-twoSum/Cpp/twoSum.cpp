@@ -1,12 +1,11 @@
-#include <vector>
+#include <assert.h>
+#include <iostream>
 #include <unordered_map>
-
-using namespace std;
-
+#include <vector>
 class Solution {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {        
-        unordered_map<int, int> smap{};
+    std::vector<int> twoSum(std::vector<int>& nums, int target) {        
+        std::unordered_map<int, int> smap{};
         auto nsize = nums.size();
         for(auto i = 0; i < nsize; i++){
             auto x = target - nums[i];
@@ -18,3 +17,14 @@ public:
         return {0,0};
     }
 };
+
+int main(){
+    std::vector<int> inArray = {2,7,12,4};
+    std::vector<int> inTargets = {9,6,19,11};
+    std::vector<std::vector<int>> wants = {{0,1}, {0,3}, {1,2}, {1,3}};
+
+    for(int i =0; i < inTargets.size(); i++){
+        assert(Solution().twoSum(inArray, inTargets[i]) == wants[i]);
+        std::cout << "Test " << i << " passed\n";
+    };
+}

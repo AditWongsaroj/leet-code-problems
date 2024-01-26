@@ -14,3 +14,5 @@ var twoSum = function (nums, target) {
     seen_list.set(nums[i], i);
   }
 };
+
+module.exports = twoSum;

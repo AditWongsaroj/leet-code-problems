@@ -1,6 +1,6 @@
 module twoSum
 
-//go test ./go
+//go test .
 
 go 1.21.5
 

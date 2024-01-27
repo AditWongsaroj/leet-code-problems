@@ -6,7 +6,7 @@ import (
 	"github.com/google/go-cmp/cmp"
 )
 
-func TestArray(t *testing.T){
+func TestTwoSum(t *testing.T){
 	for _, c := range []struct{
 		inTarget int
 		inArray, want []int 
@@ -18,7 +18,7 @@ func TestArray(t *testing.T){
 	}{
 		got := TwoSum(c.inArray, c.inTarget)
 		if !cmp.Equal( got, c.want){
-			t.Errorf("TwoSum(%v , %v) == %v, want %v", c.inArray, c.inTarget, got, c.want)
+			t.Errorf("TwoSum(%v , %v) got == %v, want %v", c.inArray, c.inTarget, got, c.want)
 		}
 	}
-}
+}	

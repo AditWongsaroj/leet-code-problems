@@ -1,2 +1,6 @@
+.gitignore
 .vscode
-*.exe
+**/*.exe
+**/*.ilk
+**/*.pdb
+**/*.obj

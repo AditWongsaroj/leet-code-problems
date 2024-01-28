@@ -1,6 +1,0 @@
-.gitignore
-.vscode
-**/*.exe
-**/*.ilk
-**/*.pdb
-**/*.obj

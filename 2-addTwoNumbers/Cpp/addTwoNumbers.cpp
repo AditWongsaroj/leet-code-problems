@@ -1,5 +1,3 @@
-#include <assert.h>
-#include <iostream>
 #include <vector>
 
 struct ListNode
@@ -57,45 +55,3 @@ public:
     return result;
   }
 };
-
-ListNode* ln_builder(std::vector<int> nums)
-{
-  auto ln = new ListNode();
-  auto cur = ln;
-  auto alen = nums.size();
-
-  for (auto i = 0; i < alen; i++)
-  {
-    cur->val = nums[i];
-    if (i != alen - 1)
-    {
-      cur->next = new ListNode();
-      cur = cur->next;
-    }
-  }
-  return ln;
-}
-
-//Testing
-int main()
-{
-  std::vector<std::vector<int>> inArrays = { {0}, {0}, {2,4,3}, {5,6,4}, {9,9,9}, {9,9,9,9,9} };
-  std::vector<std::vector<int>> wants = { {0}, {2,4,3}, {7,0,8}, {4,6,4,1}, {8,9,9,0,0,1} };
-
-  for (auto i = 0; i < inArrays.size() - 1; i++)
-  {
-    auto l1 = ln_builder(inArrays[i]);
-    auto l2 = ln_builder(inArrays[i + 1]);
-    auto want = ln_builder(wants[i]);
-    auto got = Solution().addTwoNumbers(l1, l2);
-
-    while (got || want)
-    {
-      std::cout << "Test " << i << " - got: " << got->val << " | want: " << want->val << "\n";
-      assert(got->val == want->val);
-      got = got->next;
-      want = want->next;
-    }
-    std::cout << "Test " << i << " passed\n";
-  }
-}

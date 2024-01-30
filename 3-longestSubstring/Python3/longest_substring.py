@@ -1,5 +1,5 @@
 ''' Given a string s, find the length of the 
-    longest substring without repeating characters. ''' 
+    longest substring without repeating characters. '''
 
 class Solution:
     '''from leetcode'''
@@ -17,7 +17,7 @@ class Solution:
         return longest
 
     def ms26(self, s: str) -> int:
-        ''' faster from letcode'''     
+        ''' faster from leetcode'''     
         start = result = 0
         seen = {}
         for i, c in enumerate(s):
@@ -26,6 +26,3 @@ class Solution:
             result = max(result, i - start + 1)
             seen[c] = i
         return result
-
-if __name__ == '__main__':
-    print(Solution.length_of_longest_substring(None, "abcabcbb"))

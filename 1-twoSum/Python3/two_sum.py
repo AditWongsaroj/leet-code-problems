@@ -6,7 +6,6 @@ class Solution:
             if x in seen_dict.keys():
                 return [seen_dict[x], i]
             seen_dict[num] = i
-        
 
 import unittest        
 class TestTwoSum(unittest.TestCase):

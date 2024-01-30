@@ -1,7 +1,8 @@
 '''Problem 2 https://leetcode.com/problems/add-two-numbers/'''
 
 class ListNode:
-    '''from leetcode'''
+    '''from leetcode; next line disables pylint squigle in vscode'''
+    # pylint: disable-next=redefined-builtin
     def __init__(self, val=0, next=None):
         self.val = val
         self.next = next

@@ -1,13 +1,5 @@
-#include <vector>
 
-struct ListNode
-{
-  int val = 0;
-  ListNode* next = nullptr;
-  ListNode() = default;
-  explicit ListNode(int x) : val(x){}
-  ListNode(int x, ListNode* next) : val(x), next(next) {}
-};
+#include "listNode.h"
 
 class Solution
 {

@@ -9,20 +9,8 @@ class Solution:
         ch_map = {}
 
         for i, c in enumerate(s):
-            x = ch_map.get(c) if ch_map.get(c) is not None else 0
-            left = max(x,  left)
+            left = max(ch_map.get(c, 0),  left)
             longest = max(longest, right-left +1)
             ch_map[c] = i+1
             right +=1
         return longest
-
-    def ms26(self, s: str) -> int:
-        ''' faster from leetcode'''     
-        start = result = 0
-        seen = {}
-        for i, c in enumerate(s):
-            if seen.get(c, -1) >= start:
-                start = seen[c] + 1
-            result = max(result, i - start + 1)
-            seen[c] = i
-        return result

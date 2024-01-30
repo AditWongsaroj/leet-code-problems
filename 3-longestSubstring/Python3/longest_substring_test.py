@@ -17,15 +17,5 @@ class Test(unittest.TestCase):
             print(f'Test {i} - got: {got} | want: {want}')
             self.assertEqual(got, want)
 
-    # def test2(self):
-    #     '''ms26 tests'''
-    #     in_arrays = ["", "abc", "bb", "dvds", "abcabcbb", "abccbafa"]
-    #     wants = [0, 3, 1, 3, 3, 4]
-    #     for i, s in enumerate(in_arrays):
-    #         got = Solution().ms26(s)
-    #         want = wants[i]
-    #         print(f'Test {i} - got: {got} | want: {want}')
-    #         self.assertEqual(got, want)
-
 if __name__ == '__main__':
     unittest.main()
